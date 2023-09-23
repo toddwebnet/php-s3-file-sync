@@ -32,5 +32,22 @@
             "source": "/home/jtodd/docker",
             "folder": "checkutility/docker/"
         }
+    ],
+    "salvador": [
+        {
+            "bucket": "fei",
+            "source": "/home/rfodor/data",
+            "folder": "salvador/data/"
+        },
+        {
+            "bucket": "fei",
+            "source": "/home/rfodor/dockers",
+            "folder": "salvador/dockers"
+        },
+        {
+            "bucket": "fei",
+            "source": "/home/jtodd/docker",
+            "folder": "checkutility/docker/"
+        }
     ]
 }
