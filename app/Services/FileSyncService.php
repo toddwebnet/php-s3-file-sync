@@ -9,8 +9,11 @@ class FileSyncService
 {
     use Singleton;
 
-    public function syncFolders($bucket, $sourcePath, $s3Folder): void
+    private $pathKey = '';
+
+    public function syncFolders($pathKey,$bucket, $sourcePath, $s3Folder): void
     {
+        $this->pathKey = $pathKey;
         $s3StorageService = new S3StorageService($bucket);
         $lastDate = $this->getStartDate($s3StorageService, $s3Folder);
         $this->getFilesByTime($s3StorageService, $s3Folder, $sourcePath, $lastDate, 'now');
@@ -50,7 +53,7 @@ class FileSyncService
 
     private function getDataFilePath($subFolder): string
     {
-        return '_data/' . str_replace('/', '_', trim($subFolder, '/')) . '_last_file_date.json';
+        return '_data/' . $this->pathKey . '/' . str_replace('/', '_', trim($subFolder, '/')) . '_last_file_date.json';
     }
 
     private function getStartDate(S3StorageService $s3Service, $s3Folder)
