@@ -38,12 +38,10 @@ class S3StorageService
         $this->bucket = ($bucket === null) ? $bucket : env('AWS_BUCKET');
     }
 
-    private function parseEndPoint($endpoint)
-    {
-        return $endpoint;
+    private function parseEndPoint($endpoint){
         $minio = "minio.jtody.com";
 
-        if (strpos($endpoint, $minio) > 0) {
+        if(strpos($endpoint, $minio) >0){
             $ip = gethostbyname($minio);
             $endpoint = str_replace($minio, $ip, $endpoint);
         }
