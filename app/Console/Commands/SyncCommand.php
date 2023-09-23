@@ -24,7 +24,10 @@ class SyncCommand extends Command
         $x = 0;
         foreach ($conf->{$pathKey} as $item) {
             $this->line("Processing for line: " . print_r($item, true));
-            FileSyncService::instance()->syncFolders($item->bucket, $item->source, $item->folder);
+            FileSyncService::instance()->syncFolders(
+                $item->bucket,
+                $item->source,
+                trim($item->folder, '/') . '/');
         }
 
 

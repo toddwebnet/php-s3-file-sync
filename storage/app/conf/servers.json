@@ -9,24 +9,28 @@
             "bucket": "fei",
             "source": "/home/jtodd/Documents",
             "folder": "local/documents/"
+        },
+        {
+            "bucket": "fei",
+            "source": "/home/jtodd/test",
+            "folder": "local/tests/"
         }
     ],
     "checkutility-server": [
         {
             "bucket": "fei",
             "source": "/home/jtodd/backups/mysql",
-            "folder": "checkutility/mysql"
+            "folder": "checkutility/mysql/"
         },
         {
             "bucket": "fei",
             "source": "/home/jtodd/projects",
-            "folder": "checkutility/projects"
+            "folder": "checkutility/projects/"
         },
         {
             "bucket": "fei",
             "source": "/home/jtodd/docker",
-            "folder": "checkutility/docker"
+            "folder": "checkutility/docker/"
         }
-
     ]
 }
