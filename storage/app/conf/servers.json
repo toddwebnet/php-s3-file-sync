@@ -49,5 +49,20 @@
             "source": "/home/jtodd/docker",
             "folder": "checkutility/docker/"
         }
+    ],
+    "feilinux": [
+        {
+            "bucket": "fei",
+            "source": "/home/jtodd/apps",
+            "folder": "feilinux/apps/"
+        },{
+            "bucket": "fei",
+            "source": "/home/jtodd/backups",
+            "folder": "feilinux/backups/"
+        },{
+            "bucket": "fei",
+            "source": "/home/jtodd/data/portalCompanyImages",
+            "folder": "feilinux/portalCompanyImages/"
+        }
     ]
 }
