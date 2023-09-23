@@ -14,6 +14,11 @@
             "bucket": "fei",
             "source": "/home/jtodd/test",
             "folder": "local/tests/"
+        },
+        {
+            "bucket": "fei",
+            "source": "/home/jtodd/ownCloud/rfodor",
+            "folder": "local/rfodor/"
         }
     ],
     "checkutility-server": [
@@ -55,11 +60,13 @@
             "bucket": "fei",
             "source": "/home/jtodd/apps",
             "folder": "feilinux/apps/"
-        },{
+        },
+        {
             "bucket": "fei",
             "source": "/home/jtodd/backups",
             "folder": "feilinux/backups/"
-        },{
+        },
+        {
             "bucket": "fei",
             "source": "/home/jtodd/data/portalCompanyImages",
             "folder": "feilinux/portalCompanyImages/"

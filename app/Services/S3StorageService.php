@@ -24,7 +24,7 @@ class S3StorageService
             $this->s3Client = new S3Client([
                 'version' => 'latest',
                 'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
-                'endpoint' => env('AWS_S3_ENDPOINT'),
+                'endpoint' => $this->parseEndPoint(env('AWS_S3_ENDPOINT')),
                 'use_path_style_endpoint' => true,
                 'credentials' => [
                     'key' => env('AWS_ACCESS_KEY_ID'),
@@ -36,6 +36,15 @@ class S3StorageService
         }
 
         $this->bucket = ($bucket === null) ? $bucket : env('AWS_BUCKET');
+    }
+
+    private function parseEndPoint($endpoint){
+        $minio = "minio.jtody.com";
+        if(strpos($endpoint, $minio) >0){
+            $ip = gethostbyname($minio);
+            $endpoint = str_replace($minio, $ip, $endpoint);
+        }
+        return $endpoint;
     }
 
     public function putObject($fileStream, string $targetPath)
