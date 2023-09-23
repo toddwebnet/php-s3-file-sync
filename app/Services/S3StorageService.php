@@ -18,7 +18,7 @@ class S3StorageService
     private $s3Client;
     private $bucket;
 
-    public function __construct($s3Client = null)
+    public function __construct($bucket = null, $s3Client = null)
     {
         if ($s3Client === null) {
             $this->s3Client = new S3Client([
@@ -34,10 +34,11 @@ class S3StorageService
         } else {
             $this->s3Client = $s3Client;
         }
-        $this->bucket = env('AWS_BUCKET');
+
+        $this->bucket = ($bucket === null) ? $bucket : env('AWS_BUCKET');
     }
 
-    public function putObject( $fileStream, string $targetPath)
+    public function putObject($fileStream, string $targetPath)
     {
         /** @var Result $response */
         $response = $this->s3Client->putObject([
@@ -60,11 +61,11 @@ class S3StorageService
 
     public function getObject($objectUrl)
     {
-       $response = ($this->s3Client->getObject([
-           'Bucket' => $this->bucket,
-           'Key' => $objectUrl
-       ]));
-       return $response->get('Body');
+        $response = ($this->s3Client->getObject([
+            'Bucket' => $this->bucket,
+            'Key' => $objectUrl
+        ]));
+        return $response->get('Body');
     }
 
     public function exists($path)
