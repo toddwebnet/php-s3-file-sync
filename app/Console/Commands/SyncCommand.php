@@ -14,7 +14,7 @@ class SyncCommand extends Command
     public function handle(): void
     {
         $pathKey = $this->argument('conf');
-        $jsonPath = getcwd() . '/storage/app/conf/servers.json';
+        $jsonPath = app_path() . '/../storage/app/conf/servers.json';
         $conf = json_decode(file_get_contents(realpath($jsonPath)));
         if (!isset($conf->{$pathKey})) {
             $this->error("Server Conf not found for {$pathKey}");
