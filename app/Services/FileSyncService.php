@@ -50,7 +50,7 @@ class FileSyncService
 
     private function getDataFilePath($subFolder): string
     {
-        return str_replace('/', '_', trim($subFolder, '/')) . '_last_file_date.json';
+        return '_data/' . str_replace('/', '_', trim($subFolder, '/')) . '_last_file_date.json';
     }
 
     private function getStartDate(S3StorageService $s3Service, $s3Folder)
