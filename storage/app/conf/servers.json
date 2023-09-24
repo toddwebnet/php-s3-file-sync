@@ -48,11 +48,6 @@
             "bucket": "fei",
             "source": "/home/rfodor/dockers",
             "folder": "salvador/dockers"
-        },
-        {
-            "bucket": "fei",
-            "source": "/home/jtodd/docker",
-            "folder": "checkutility/docker/"
         }
     ],
     "feilinux": [
