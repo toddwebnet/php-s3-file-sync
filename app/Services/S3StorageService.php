@@ -39,13 +39,13 @@ class S3StorageService
     }
 
     private function parseEndPoint($endpoint){
-        $minio = "minio.jtody.com";
-
-        if(strpos($endpoint, $minio) >0){
-            $ip = gethostbyname($minio);
-            $endpoint = str_replace($minio, $ip, $endpoint);
-        }
         return $endpoint;
+//        $minio = "minio.jtody.com";
+//        if(strpos($endpoint, $minio) >0){
+//            $ip = gethostbyname($minio);
+//            $endpoint = str_replace($minio, $ip, $endpoint);
+//        }
+//        return $endpoint;
     }
 
     public function putObject($fileStream, string $targetPath)
